@@ -1,0 +1,70 @@
+{
+  "modules": [
+    {
+      "name": "IoTHub",
+      "loader": {
+        "name" : "native",
+        "entrypoint" : {
+          "module.path": "build/modules/iothub/libiothub.so"
+        }
+      },
+      "args": {
+        "IoTHubName": "MarkApp",
+        "IoTHubSuffix": "azure-devices.net",
+        "Transport": "mqtt"
+      }
+    },
+    {
+      "name": "BLE Printer",
+      "loader": {
+        "name" : "native",
+        "entrypoint" : {
+          "module.path": "build/samples/ble_gateway/ble_printer/libble_printer.so"
+        }
+      },
+      "args": null
+    },
+    {
+      "name": "mapping",
+      "loader": {
+        "name" : "native",
+        "entrypoint" : {
+          "module.path": "build/modules/identitymap/libidentity_map.so"
+        }
+      },
+      "args": [
+        {
+          "macAddress": "00:0B:57:0C:CE:AA",
+          "deviceId": "raspberry",
+          "deviceKey": "2w7lzAk04NK3N27so2fHhrSyIoKxhyfeeT5GT7V+NtY="
+        }
+      ]
+    },
+    {
+      "name": "BLEC2D",
+      "loader": {
+        "name" : "native",
+        "entrypoint" : {
+          "module.path": "build/modules/ble/libble_c2d.so"
+        }
+      },
+      "args": null
+    },
+    {
+      "name": "iMARKu-SENSOR",
+      "loader": {
+        "name" : "native",
+        "entrypoint" : {
+          "module.path": "build/modules/ble/libble.so"
+        }
+      },
+      "args": {
+        "controller_index": 0,
+        "device_mac_address": "00:0B:57:0C:CE:AA",
+        "instructions": [
+          {
+            "type": "read_once",
+            "service_uuid": "00431c4a-a7a4-428b-a96d-d92d43c8c7cf",
+            "characteristic_uuid": "f1b41cde-dbf5-4acf-8679-ecb8b4dca6fe"
+          },
+"gateway_sample.json" 124L, 2675C 
